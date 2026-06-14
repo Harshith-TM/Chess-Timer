@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_home_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityHome">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white_shade1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/press_start_2p"
+            android:text="@string/text_chess"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black_shade1"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/press_start_2p"
+            android:text="@string/text_timer"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black_shade1"
+            android:textSize="60sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/black_shade1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="3"
+            android:padding="20dp"
+            android:rowCount="6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/silkscreen"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/text_play_time"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/playtime_minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:autofillHints=""
+                android:backgroundTint="@color/white_shade1"
+                android:fontFamily="@font/silkscreen"
+                android:hint="@string/number_10"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:minWidth="48dp"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textColorHint="@color/light_grey"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/silkscreen"
+                android:text="@string/text_minutes"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/silkscreen"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/text_steps"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/playtime_seconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:autofillHints=""
+                android:backgroundTint="@color/white_shade1"
+                android:fontFamily="@font/silkscreen"
+                android:hint="@string/number_10"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:minWidth="48dp"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textColorHint="@color/light_grey"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/silkscreen"
+                android:text="@string/text_seconds"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/silkscreen"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/text_alert"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textSize="25sp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/toggle_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:checked="true"
+                android:fontFamily="@font/silkscreen"
+                android:thumb="@drawable/toggle_thumb"
+                app:thumbTint="@null"
+                app:track="@drawable/toggle_track"
+                app:trackTint="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/silkscreen"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/text_method"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textSize="25sp" />
+
+            <Spinner
+                android:id="@+id/dropdown_options"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:background="@drawable/drop_down_background"
+                android:minWidth="48dp"
+                android:popupBackground="@drawable/drop_down_item_background"
+                android:popupElevation="5dp"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/method_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/silkscreen"
+                android:justificationMode="inter_word"
+                android:paddingHorizontal="10dp"
+                android:text="@string/desc_classic_method"
+                android:textAllCaps="true"
+                android:textColor="@color/white_shade1"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/white_shade1"
+                android:fontFamily="@font/silkscreen"
+                android:maxWidth="350dp"
+                android:text="@string/text_start"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black_shade1"
+                android:textSize="20sp"
+                app:cornerRadius="10dp" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

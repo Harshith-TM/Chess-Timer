@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Chess Timer</string>
+    <string name="app_logo">App Logo</string>
+    <string name="text_chess">chess</string>
+    <string name="text_timer">timer</string>
+    <string name="text_chess_timer">chess timer</string>
+    <string name="text_start">start</string>
+    <string name="text_begin">let\'s!!! go…</string>
+    <string name="text_play_time">play time:</string>
+    <string name="number_10">10</string>
+    <string name="text_minutes">minutes</string>
+    <string name="text_seconds">seconds</string>
+    <string name="text_steps">step (s):</string>
+    <string name="text_alert">alert:</string>
+    <string name="toggle_on">ON</string>
+    <string name="toggle_off">OFF</string>
+    <string name="text_method">method:</string>
+    <string name="desc_classic_method">Classic timing method: No additional time is added after moves, game ends when either of the player\'s clock is zero.</string>
+    <string name="desc_fischer_method">Fischer timing method: 5 seconds are added to player\'s clock after every move.</string>
+    <string name="desc_bronstein_method">Bronstein timing method: if a player uses more than 5 seconds, then 5 seconds is added to the player\'s clock but if a player uses less than 5 seconds, only the exact amount of time used by the player is added.</string>
+    <string name="player_black">Player Black</string>
+    <string name="player_white">Player White</string>
+    <string name="countdown_timer">10:00</string>
+    <string name="play">play</string>
+    <string name="pause">pause</string>
+    <string name="restart">restart</string>
+    <string name="stop">stop</string>
+</resources>

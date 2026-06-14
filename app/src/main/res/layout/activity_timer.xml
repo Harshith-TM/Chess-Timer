@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityTimer">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white_shade1"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            app:layout_constraintBottom_toTopOf="@id/countDownTimerWhite"
+            app:layout_constraintEnd_toEndOf="@id/countDownTimerWhite"
+            app:layout_constraintStart_toStartOf="@id/countDownTimerWhite">
+
+            <ImageButton
+                android:id="@+id/buttonStopWhite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/stop"
+                android:padding="8dp"
+                android:src="@drawable/icon_stop_white" />
+
+            <ImageButton
+                android:id="@+id/buttonRestartWhite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/restart"
+                android:padding="8dp"
+                android:src="@drawable/icon_restart_white" />
+
+            <ImageButton
+                android:id="@+id/buttonPauseWhite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/pause"
+                android:padding="8dp"
+                android:src="@drawable/icon_pause_white" />
+
+            <ImageButton
+                android:id="@+id/buttonPlayWhite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/play"
+                android:padding="8dp"
+                android:src="@drawable/icon_play_white" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/countDownTimerWhite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardBackgroundColor="@color/black_shade1"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toTopOf="@id/playerWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:paddingBottom="40dp">
+
+                <TextView
+                    android:id="@+id/countDownTimerWhiteText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/press_start_2p"
+                    android:rotation="180"
+                    android:text="@string/countdown_timer"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white_shade1"
+                    android:textSize="60sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/playerWhite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/silkscreen"
+            android:rotation="180"
+            android:text="@string/player_white"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black_shade1"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/black_shade1"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/playerBlack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/silkscreen"
+            android:text="@string/player_black"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white_shade1"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/countDownTimerBlack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardBackgroundColor="@color/white_shade1"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playerBlack">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:paddingTop="40dp">
+
+                <TextView
+                    android:id="@+id/countDownTimerBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/press_start_2p"
+                    android:gravity="center_vertical"
+                    android:text="@string/countdown_timer"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_shade1"
+                    android:textSize="60sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            app:layout_constraintEnd_toEndOf="@id/countDownTimerBlack"
+            app:layout_constraintStart_toStartOf="@id/countDownTimerBlack"
+            app:layout_constraintTop_toBottomOf="@id/countDownTimerBlack">
+
+            <ImageButton
+                android:id="@+id/buttonPlayBlack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/play"
+                android:padding="8dp"
+                android:src="@drawable/icon_play_black" />
+
+            <ImageButton
+                android:id="@+id/buttonPauseBlack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/pause"
+                android:padding="8dp"
+                android:src="@drawable/icon_pause_black" />
+
+            <ImageButton
+                android:id="@+id/buttonRestartBlack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/restart"
+                android:padding="8dp"
+                android:src="@drawable/icon_restart_black" />
+
+            <ImageButton
+                android:id="@+id/buttonStopBlack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/stop"
+                android:padding="8dp"
+                android:src="@drawable/icon_stop_black" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
