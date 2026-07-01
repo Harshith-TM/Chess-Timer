@@ -1,6 +1,10 @@
 package com.example.chesstimer
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -39,5 +43,21 @@ class LauncherScreen : AppCompatActivity() {
         }
 
         initViews()
+
+        viewAnimations()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, ActivityHome::class.java))
+            finish()
+        }, 2500)
+    }
+
+    private fun viewAnimations() {
+        val moveInTopAnimation = AnimationUtils.loadAnimation(this, R.anim.move_in_top)
+        val moveInBottomAnimation = AnimationUtils.loadAnimation(this, R.anim.move_in_bottom)
+        textChess.startAnimation(moveInBottomAnimation)
+        textTimer.startAnimation(moveInTopAnimation)
+        appLogoWhite.startAnimation(moveInBottomAnimation)
+        appLogoBlack.startAnimation(moveInTopAnimation)
     }
 }
