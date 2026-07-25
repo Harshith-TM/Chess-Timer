@@ -20,9 +20,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="40dp"
-            app:layout_constraintBottom_toTopOf="@id/countDownTimerWhite"
-            app:layout_constraintEnd_toEndOf="@id/countDownTimerWhite"
-            app:layout_constraintStart_toStartOf="@id/countDownTimerWhite">
+            app:layout_constraintBottom_toTopOf="@id/timerWhite"
+            app:layout_constraintEnd_toEndOf="@id/timerWhite"
+            app:layout_constraintStart_toStartOf="@id/timerWhite">
 
             <ImageButton
                 android:id="@+id/buttonStopWhite"
@@ -66,7 +66,7 @@
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/countDownTimerWhite"
+            android:id="@+id/timerWhite"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -84,7 +84,7 @@
                 android:paddingBottom="40dp">
 
                 <TextView
-                    android:id="@+id/countDownTimerWhiteText"
+                    android:id="@+id/timerTextWhite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/press_start_2p"
@@ -138,7 +138,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/countDownTimerBlack"
+            android:id="@+id/timerBlack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -156,7 +156,7 @@
                 android:paddingTop="40dp">
 
                 <TextView
-                    android:id="@+id/countDownTimerBlackText"
+                    android:id="@+id/timerTextBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/press_start_2p"
@@ -172,9 +172,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="40dp"
-            app:layout_constraintEnd_toEndOf="@id/countDownTimerBlack"
-            app:layout_constraintStart_toStartOf="@id/countDownTimerBlack"
-            app:layout_constraintTop_toBottomOf="@id/countDownTimerBlack">
+            app:layout_constraintEnd_toEndOf="@id/timerBlack"
+            app:layout_constraintStart_toStartOf="@id/timerBlack"
+            app:layout_constraintTop_toBottomOf="@id/timerBlack">
 
             <ImageButton
                 android:id="@+id/buttonPlayBlack"
