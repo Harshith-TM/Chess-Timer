@@ -13,19 +13,30 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ActivityHome : AppCompatActivity() {
 
-    private lateinit var spinnerDropDown : Spinner
-    private lateinit var methodDescription : TextView
-    private lateinit var startButton : Button
+    private lateinit var playTimeMinutes: EditText
+    private lateinit var playTimeIncrement: EditText
+    private lateinit var alertToneToggle: SwitchCompat
+    private lateinit var spinnerDropDown: Spinner
+    private lateinit var methodDescription: TextView
+    private lateinit var startButton: Button
 
-    private fun initViews(){
+    private var timerMinutes: Int = 0
+    private var timerIncrement: Int = 0
+    private var isAlertEnabled: Boolean = true
+    private var selectedMethod: String = "CLASSIC"
+
+    private fun initViews() {
+        playTimeMinutes = findViewById(R.id.playtime_minutes)
+        playTimeIncrement = findViewById(R.id.playtime_increment)
+        alertToneToggle = findViewById(R.id.toggle_alert)
         spinnerDropDown = findViewById(R.id.dropdown_options)
         methodDescription = findViewById(R.id.method_description)
         startButton = findViewById(R.id.button_start)
@@ -42,10 +53,23 @@ class ActivityHome : AppCompatActivity() {
         }
 
         initViews()
+
         dropDown()
 
         startButton.setOnClickListener {
+            timerMinutes = playTimeMinutes.text.toString().toIntOrNull() ?: 10
+
+            timerIncrement = playTimeIncrement.text.toString().toIntOrNull() ?: 5
+
+            alertToneToggle.setOnCheckedChangeListener { _, isChecked ->
+                if (!isChecked) isAlertEnabled = false
+            }
+
             val intent = Intent(this, ActivityTimer::class.java)
+            intent.putExtra("Timer Minutes", timerMinutes)
+            intent.putExtra("Timer Increment", timerIncrement)
+            intent.putExtra("Alert Tone", isAlertEnabled)
+            intent.putExtra("Timer Method", selectedMethod)
             startActivity(intent)
         }
     }
@@ -67,8 +91,8 @@ class ActivityHome : AppCompatActivity() {
                     isFirst = false
                     return
                 }
-                val selectedItem = p0?.getItemAtPosition(p2).toString()
-                when (selectedItem) {
+                selectedMethod = p0?.getItemAtPosition(p2).toString()
+                when (selectedMethod) {
                     "CLASSIC" -> {
                         methodDescription.setText(R.string.desc_classic_method)
                     }
@@ -85,7 +109,6 @@ class ActivityHome : AppCompatActivity() {
                         methodDescription.setText(R.string.desc_classic_method)
                     }
                 }
-                Toast.makeText(this@ActivityHome, "Item: $selectedItem", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {}
