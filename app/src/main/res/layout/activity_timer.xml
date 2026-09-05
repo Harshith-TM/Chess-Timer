@@ -36,7 +36,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/stop"
                     android:padding="8dp"
-                    android:src="@drawable/icon_stop_white" />
+                    android:src="@drawable/icon_stop_white"
+                    app:tint="@color/white_control_button_tint" />
 
                 <ImageButton
                     android:id="@+id/buttonRestartWhite"
@@ -46,7 +47,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/restart"
                     android:padding="8dp"
-                    android:src="@drawable/icon_restart_white" />
+                    android:src="@drawable/icon_restart_white"
+                    app:tint="@color/white_control_button_tint" />
 
                 <ImageButton
                     android:id="@+id/buttonPauseWhite"
@@ -56,7 +58,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/pause"
                     android:padding="8dp"
-                    android:src="@drawable/icon_pause_white" />
+                    android:src="@drawable/icon_pause_white"
+                    app:tint="@color/white_control_button_tint" />
 
                 <ImageButton
                     android:id="@+id/buttonPlayWhite"
@@ -66,7 +69,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/play"
                     android:padding="8dp"
-                    android:src="@drawable/icon_play_white" />
+                    android:src="@drawable/icon_play_white"
+                    app:tint="@color/white_control_button_tint" />
             </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
@@ -78,7 +82,8 @@
                 app:cardCornerRadius="15dp"
                 app:layout_constraintBottom_toTopOf="@id/playerWhite"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="@color/black_shade1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -150,7 +155,8 @@
                 app:cardCornerRadius="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/playerBlack">
+                app:layout_constraintTop_toBottomOf="@id/playerBlack"
+                app:strokeColor="@color/white_shade1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -188,7 +194,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/play"
                     android:padding="8dp"
-                    android:src="@drawable/icon_play_black" />
+                    android:src="@drawable/icon_play_black"
+                    app:tint="@color/black_control_button_tint" />
 
                 <ImageButton
                     android:id="@+id/buttonPauseBlack"
@@ -198,7 +205,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/pause"
                     android:padding="8dp"
-                    android:src="@drawable/icon_pause_black" />
+                    android:src="@drawable/icon_pause_black"
+                    app:tint="@color/black_control_button_tint" />
 
                 <ImageButton
                     android:id="@+id/buttonRestartBlack"
@@ -208,7 +216,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/restart"
                     android:padding="8dp"
-                    android:src="@drawable/icon_restart_black" />
+                    android:src="@drawable/icon_restart_black"
+                    app:tint="@color/black_control_button_tint" />
 
                 <ImageButton
                     android:id="@+id/buttonStopBlack"
@@ -218,7 +227,8 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/stop"
                     android:padding="8dp"
-                    android:src="@drawable/icon_stop_black" />
+                    android:src="@drawable/icon_stop_black"
+                    app:tint="@color/black_control_button_tint" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -231,8 +241,8 @@
         android:layout_height="match_parent"
         android:background="@color/countdown_overlay"
         android:clickable="true"
-        android:visibility="gone"
-        android:focusable="true">
+        android:focusable="true"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/countdownText"
