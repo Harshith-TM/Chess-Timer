@@ -7,16 +7,16 @@
     <color name="black_shade2">#CC000000</color>
     <color name="light_green">#09963F</color>
     <color name="dark_green">#225936</color>
-    <color name="dark_grey">#3E3E3E</color>
-    <color name="light_grey">#656565</color>
+    <color name="dark_grey">#1E1E1E</color>
+    <color name="light_grey">#858585</color>
     <color name="red">#FF3030</color>
 
-    <color name="card_color1">@color/black_shade1</color>
-    <color name="card_color2">@color/white_shade1</color>
-    <color name="timer_end_card">@color/red</color>
+    <color name="timer_white">@color/black_shade1</color>
+    <color name="timer_black">@color/white_shade1</color>
+    <color name="timer_end">@color/red</color>
     <color name="countdown_overlay">@color/black_shade2</color>
-    <color name="selected_focused">@color/light_green</color>
-    <color name="selected_unfocused">@color/dark_green</color>
+    <color name="selected_timer_focused">@color/light_green</color>
+    <color name="selected_timer_unfocused">@color/dark_green</color>
     <color name="white_button_enabled">@color/dark_grey</color>
     <color name="white_button_disabled">@color/light_grey</color>
     <color name="black_button_enabled">@color/light_grey</color>
