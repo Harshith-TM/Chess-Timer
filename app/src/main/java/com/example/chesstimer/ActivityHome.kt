@@ -53,9 +53,8 @@ class ActivityHome : AppCompatActivity() {
         }
 
         initViews()
-
         dropDown()
-
+        //start game button
         startButton.setOnClickListener {
             timerMinutes = playTimeMinutes.text.toString().toIntOrNull() ?: 10
 
@@ -85,6 +84,8 @@ class ActivityHome : AppCompatActivity() {
 
         spinnerDropDown.dropDownVerticalOffset = 100
 
+        playTimeIncrement.isEnabled = false
+        playTimeIncrement.hint = "0"
         spinnerDropDown.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 if (isFirst) {
@@ -95,18 +96,20 @@ class ActivityHome : AppCompatActivity() {
                 when (selectedMethod) {
                     "CLASSIC" -> {
                         methodDescription.setText(R.string.desc_classic_method)
+                        playTimeIncrement.isEnabled = false
+                        playTimeIncrement.hint = "0"
                     }
 
                     "FISCHER" -> {
                         methodDescription.setText(R.string.desc_fischer_method)
+                        playTimeIncrement.isEnabled = true
+                        playTimeIncrement.hint = "5"
                     }
 
                     "BRONSTEIN" -> {
                         methodDescription.setText(R.string.desc_bronstein_method)
-                    }
-
-                    else -> {
-                        methodDescription.setText(R.string.desc_classic_method)
+                        playTimeIncrement.isEnabled = true
+                        playTimeIncrement.hint = "5"
                     }
                 }
             }
