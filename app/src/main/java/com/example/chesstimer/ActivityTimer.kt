@@ -322,42 +322,34 @@ class ActivityTimer : AppCompatActivity() {
     }
 
     private fun handleClockPress(player: Player) {
-        if (gameState != GameState.RUNNING) {
-            return
-        }
-        if (player != currentPlayer) {
-            return
-        }
+        if (gameState != GameState.RUNNING || player != currentPlayer) return
 
         playerTimer?.cancel()
         playerTimer = null
 
+        val timerMethods = TimerMethods()
         if (selectedMethod == "FISCHER") {
             when (currentPlayer) {
                 Player.WHITE -> {
-                    whiteTimeSeconds += incrementSeconds
+                    whiteTimeSeconds = timerMethods.fischerMethod(whiteTimeSeconds,incrementSeconds)
                     timerTextWhite.text = formatTime(whiteTimeSeconds)
                 }
 
                 Player.BLACK -> {
-                    blackTimeSeconds += incrementSeconds
+                    blackTimeSeconds = timerMethods.fischerMethod(blackTimeSeconds,incrementSeconds)
                     timerTextBlack.text = formatTime(blackTimeSeconds)
                 }
             }
         }
         if (selectedMethod == "BRONSTEIN") {
-            val currentSeconds =
-                if (currentPlayer == Player.WHITE) whiteTimeSeconds else blackTimeSeconds
-            val totalTurnTimeUsed = turnStartSeconds - currentSeconds + pauseTime
-            val returnedTime = minOf(totalTurnTimeUsed, incrementSeconds)
             when (currentPlayer) {
                 Player.WHITE -> {
-                    whiteTimeSeconds += returnedTime
+                    whiteTimeSeconds = timerMethods.bronsteinMethod(whiteTimeSeconds,turnStartSeconds,pauseTime,incrementSeconds)
                     timerTextWhite.text = formatTime(whiteTimeSeconds)
                 }
 
                 Player.BLACK -> {
-                    blackTimeSeconds += returnedTime
+                    blackTimeSeconds = timerMethods.bronsteinMethod(blackTimeSeconds,turnStartSeconds,pauseTime,incrementSeconds)
                     timerTextBlack.text = formatTime(blackTimeSeconds)
                 }
             }
