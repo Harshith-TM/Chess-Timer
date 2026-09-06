@@ -3,12 +3,17 @@ package com.example.chesstimer
 import android.annotation.SuppressLint
 import android.os.CountDownTimer
 import android.view.View
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 /*Extension Function for a countdown overlay to display before game starts*/
 
 fun ActivityTimer.preGameCountDown() {
     val activity = this
+
+    val countdownOverlay: View = findViewById(R.id.countdownOverlay)
+    val countdownText: TextView = findViewById(R.id.countdownText)
+
     countdownOverlay.visibility = View.VISIBLE
     countdownText.text = "3"
     startupCountdownTimer?.cancel()
