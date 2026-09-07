@@ -19,6 +19,8 @@
     <string name="desc_classic_method">Classic timing method: No additional time is added after moves, game ends when either of the player\'s clock is zero.</string>
     <string name="desc_fischer_method">Fischer timing method: 5 seconds are added to player\'s clock after every move.</string>
     <string name="desc_bronstein_method">Bronstein timing method: if a player uses more than 5 seconds, then 5 seconds is added to the player\'s clock but if a player uses less than 5 seconds, only the exact amount of time used by the player is added.</string>
+    <string name="settings_error_max_value">Timer Minutes cannot be more than 60 minutes and Timer Increment cannot be more than 60 seconds</string>
+    <string name="settings_error_min_value">Timer Minutes cannot be less than a minute and Timer Increment cannot be less than a second</string>
     <string name="player_black">Player Black</string>
     <string name="player_white">Player White</string>
     <string name="countdown_timer">10:00</string>
