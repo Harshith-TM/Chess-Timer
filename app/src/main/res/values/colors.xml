@@ -14,6 +14,7 @@
     <color name="timer_white">@color/black_shade1</color>
     <color name="timer_black">@color/white_shade1</color>
     <color name="timer_end">@color/red</color>
+    <color name="settings_error_text">@color/red</color>
     <color name="countdown_overlay">@color/black_shade2</color>
     <color name="selected_timer_focused">@color/light_green</color>
     <color name="selected_timer_unfocused">@color/dark_green</color>
