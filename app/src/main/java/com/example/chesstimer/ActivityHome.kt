@@ -1,5 +1,6 @@
 package com.example.chesstimer
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
@@ -26,6 +27,7 @@ class ActivityHome : AppCompatActivity() {
     private lateinit var alertToneToggle: SwitchCompat
     private lateinit var spinnerDropDown: Spinner
     private lateinit var methodDescription: TextView
+    private lateinit var settingsErrorMessage: TextView
     private lateinit var startButton: Button
 
     private var timerMinutes: Int = 0
@@ -39,9 +41,11 @@ class ActivityHome : AppCompatActivity() {
         alertToneToggle = findViewById(R.id.toggle_alert)
         spinnerDropDown = findViewById(R.id.dropdown_options)
         methodDescription = findViewById(R.id.method_description)
+        settingsErrorMessage = findViewById(R.id.error_message)
         startButton = findViewById(R.id.button_start)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -54,22 +58,29 @@ class ActivityHome : AppCompatActivity() {
 
         initViews()
         dropDown()
-        //start game button
+        alertToneToggle.setOnCheckedChangeListener { _, isChecked ->
+            if (!isChecked) isAlertEnabled = false
+        }
         startButton.setOnClickListener {
             timerMinutes = playTimeMinutes.text.toString().toIntOrNull() ?: 10
-
             timerIncrement = playTimeIncrement.text.toString().toIntOrNull() ?: 5
-
-            alertToneToggle.setOnCheckedChangeListener { _, isChecked ->
-                if (!isChecked) isAlertEnabled = false
+            if (timerMinutes > 60 || timerIncrement > 60) {
+                settingsErrorMessage.setText(R.string.settings_error_max_value)
+                settingsErrorMessage.visibility = View.VISIBLE
+                return@setOnClickListener
+            }else if (timerMinutes <= 0 || timerIncrement <= 0) {
+                settingsErrorMessage.setText(R.string.settings_error_min_value)
+                settingsErrorMessage.visibility = View.VISIBLE
+                return@setOnClickListener
+            } else {
+                settingsErrorMessage.visibility = View.GONE
+                val intent = Intent(this, ActivityTimer::class.java)
+                intent.putExtra("Timer Minutes", timerMinutes)
+                intent.putExtra("Timer Increment", timerIncrement)
+                intent.putExtra("Alert Tone", isAlertEnabled)
+                intent.putExtra("Timer Method", selectedMethod)
+                startActivity(intent)
             }
-
-            val intent = Intent(this, ActivityTimer::class.java)
-            intent.putExtra("Timer Minutes", timerMinutes)
-            intent.putExtra("Timer Increment", timerIncrement)
-            intent.putExtra("Alert Tone", isAlertEnabled)
-            intent.putExtra("Timer Method", selectedMethod)
-            startActivity(intent)
         }
     }
 
