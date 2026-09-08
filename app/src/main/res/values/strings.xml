@@ -28,4 +28,7 @@
     <string name="pause">pause</string>
     <string name="restart">restart</string>
     <string name="stop">stop</string>
+    <string name="alert_stop_timer">Stop Timer!!</string>
+    <string name="alert_stop_confirmation">Are you sure you want to\nstop the game timer.?</string>
+    <string name="alert_button_cancel">Cancel</string>
 </resources>
