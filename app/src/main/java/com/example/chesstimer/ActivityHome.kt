@@ -59,7 +59,7 @@ class ActivityHome : AppCompatActivity() {
         initViews()
         dropDown()
         alertToneToggle.setOnCheckedChangeListener { _, isChecked ->
-            if (!isChecked) isAlertEnabled = false
+            isAlertEnabled = isChecked
         }
         startButton.setOnClickListener {
             timerMinutes = playTimeMinutes.text.toString().toIntOrNull() ?: 10
@@ -68,7 +68,7 @@ class ActivityHome : AppCompatActivity() {
                 settingsErrorMessage.setText(R.string.settings_error_max_value)
                 settingsErrorMessage.visibility = View.VISIBLE
                 return@setOnClickListener
-            }else if (timerMinutes <= 0 || timerIncrement <= 0) {
+            } else if (timerMinutes <= 0 || timerIncrement <= 0) {
                 settingsErrorMessage.setText(R.string.settings_error_min_value)
                 settingsErrorMessage.visibility = View.VISIBLE
                 return@setOnClickListener

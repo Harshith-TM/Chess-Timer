@@ -6,8 +6,7 @@ import com.example.chesstimer.ActivityTimer.Player
 
 /*Extension Function to handle clock press and player switch*/
 
-fun ActivityTimer.handleClockPress(player:Player){
-    //val activity = this
+fun ActivityTimer.handleClockPress(player: Player) {
     if (gameState != GameState.RUNNING || player != currentPlayer) return
 
     playerTimer?.cancel()
@@ -17,12 +16,12 @@ fun ActivityTimer.handleClockPress(player:Player){
     if (selectedMethod == "FISCHER") {
         when (currentPlayer) {
             Player.WHITE -> {
-                whiteTimeSeconds = timerMethods.fischerMethod(whiteTimeSeconds,incrementSeconds)
+                whiteTimeSeconds = timerMethods.fischerMethod(whiteTimeSeconds, incrementSeconds)
                 timerTextWhite.text = formatTime(whiteTimeSeconds)
             }
 
             Player.BLACK -> {
-                blackTimeSeconds = timerMethods.fischerMethod(blackTimeSeconds,incrementSeconds)
+                blackTimeSeconds = timerMethods.fischerMethod(blackTimeSeconds, incrementSeconds)
                 timerTextBlack.text = formatTime(blackTimeSeconds)
             }
         }
@@ -30,12 +29,22 @@ fun ActivityTimer.handleClockPress(player:Player){
     if (selectedMethod == "BRONSTEIN") {
         when (currentPlayer) {
             Player.WHITE -> {
-                whiteTimeSeconds = timerMethods.bronsteinMethod(whiteTimeSeconds,turnStartSeconds,pauseTime,incrementSeconds)
+                whiteTimeSeconds = timerMethods.bronsteinMethod(
+                    whiteTimeSeconds,
+                    turnStartSeconds,
+                    pauseTime,
+                    incrementSeconds
+                )
                 timerTextWhite.text = formatTime(whiteTimeSeconds)
             }
 
             Player.BLACK -> {
-                blackTimeSeconds = timerMethods.bronsteinMethod(blackTimeSeconds,turnStartSeconds,pauseTime,incrementSeconds)
+                blackTimeSeconds = timerMethods.bronsteinMethod(
+                    blackTimeSeconds,
+                    turnStartSeconds,
+                    pauseTime,
+                    incrementSeconds
+                )
                 timerTextBlack.text = formatTime(blackTimeSeconds)
             }
         }
@@ -45,6 +54,7 @@ fun ActivityTimer.handleClockPress(player:Player){
     when (currentPlayer) {
         Player.WHITE -> {
             currentPlayer = Player.BLACK
+            timerAlertTone("timer switch")
             timerBlack.setCardBackgroundColor(
                 ContextCompat.getColor(
                     this,
@@ -61,6 +71,7 @@ fun ActivityTimer.handleClockPress(player:Player){
 
         Player.BLACK -> {
             currentPlayer = Player.WHITE
+            timerAlertTone("timer switch")
             timerWhite.setCardBackgroundColor(
                 ContextCompat.getColor(
                     this,
@@ -75,5 +86,6 @@ fun ActivityTimer.handleClockPress(player:Player){
             )
         }
     }
+
     startCurrentPlayerTimer()
 }

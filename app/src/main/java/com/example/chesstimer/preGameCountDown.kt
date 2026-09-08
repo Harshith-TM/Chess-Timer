@@ -27,6 +27,7 @@ fun ActivityTimer.preGameCountDown() {
         override fun onFinish() {
             countdownText.text = "1"
             countdownOverlay.visibility = View.GONE
+            timerAlertTone("timer start")
             timerWhite.setCardBackgroundColor(
                 ContextCompat.getColor(
                     activity,

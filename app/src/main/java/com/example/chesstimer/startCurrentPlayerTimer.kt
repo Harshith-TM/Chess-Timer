@@ -1,14 +1,13 @@
 package com.example.chesstimer
 
 import android.os.CountDownTimer
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.chesstimer.ActivityTimer.GameState
 import com.example.chesstimer.ActivityTimer.Player
 
 /*Extension Function to start current player countdown timer*/
 
-fun ActivityTimer.startCurrentPlayerTimer(){
+fun ActivityTimer.startCurrentPlayerTimer() {
     val activity = this
     gameState = GameState.RUNNING
     controlButtonsState()
@@ -27,6 +26,9 @@ fun ActivityTimer.startCurrentPlayerTimer(){
     playerTimer = object : CountDownTimer(currentMillis, 1000L) {
         override fun onTick(millisUntilFinished: Long) {
             val secondsRemaining = (millisUntilFinished + 999L) / 1000L
+            if (secondsRemaining == 30L || secondsRemaining == 10L) {
+                timerAlertTone("timer seconds alert")
+            }
             when (currentPlayer) {
                 Player.WHITE -> {
                     whiteTimeSeconds = secondsRemaining
@@ -52,6 +54,7 @@ fun ActivityTimer.startCurrentPlayerTimer(){
                     timerTextBlack.text = formatTime(blackTimeSeconds)
                 }
             }
+            timerAlertTone("timer end")
             gameState = GameState.GAME_OVER
             playerTimer = null
             val activeCard = if (currentPlayer == Player.WHITE) timerWhite else timerBlack

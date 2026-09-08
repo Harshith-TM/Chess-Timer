@@ -35,7 +35,7 @@ class ActivityTimer : AppCompatActivity() {
     //timer settings
     private var minutes: Int = 0
     private var increment: Int = 0
-    private var isAlertEnabled: Boolean = true
+    var isAlertEnabled: Boolean = true
     var selectedMethod: String = "CLASSIC"
 
     //timer variables
