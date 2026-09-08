@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/white_shade1"
+            android:background="@color/white_background"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -78,12 +78,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                app:cardBackgroundColor="@color/black_shade1"
+                app:cardBackgroundColor="@color/black_background"
                 app:cardCornerRadius="15dp"
                 app:layout_constraintBottom_toTopOf="@id/playerWhite"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:strokeColor="@color/black_shade1">
+                app:strokeColor="@color/stroke_black">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -100,7 +100,7 @@
                         android:rotation="180"
                         android:text="@string/countdown_timer"
                         android:textAllCaps="true"
-                        android:textColor="@color/white_shade1"
+                        android:textColor="@color/text_color_white"
                         android:textSize="60sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -115,7 +115,7 @@
                 android:text="@string/player_white"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="@color/black_shade1"
+                android:textColor="@color/text_color_black"
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/black_shade1"
+            android:background="@color/black_background"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -140,7 +140,7 @@
                 android:text="@string/player_black"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="32sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -151,12 +151,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                app:cardBackgroundColor="@color/white_shade1"
+                app:cardBackgroundColor="@color/white_background"
                 app:cardCornerRadius="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/playerBlack"
-                app:strokeColor="@color/white_shade1">
+                app:strokeColor="@color/stroke_white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -173,7 +173,7 @@
                         android:gravity="center_vertical"
                         android:text="@string/countdown_timer"
                         android:textAllCaps="true"
-                        android:textColor="@color/black_shade1"
+                        android:textColor="@color/text_color_black"
                         android:textSize="60sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -251,7 +251,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/press_start_2p"
             android:text="@string/number_5"
-            android:textColor="@color/white_shade1"
+            android:textColor="@color/text_color_white"
             android:textSize="72sp" />
 
     </FrameLayout>

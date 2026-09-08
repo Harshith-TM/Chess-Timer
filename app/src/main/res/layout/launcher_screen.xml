@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/white_shade1"
+        android:background="@color/white_background"
         android:gravity="bottom"
         android:orientation="vertical">
 
@@ -26,7 +26,7 @@
             android:text="@string/text_chess"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/black_shade1"
+            android:textColor="@color/text_color_black"
             android:textSize="60sp" />
 
         <ImageView
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/black_shade1"
+        android:background="@color/black_background"
         android:gravity="top"
         android:orientation="vertical">
 
@@ -68,7 +68,7 @@
             android:text="@string/text_timer"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/white_shade1"
+            android:textColor="@color/text_color_white"
             android:textSize="60sp" />
 
     </LinearLayout>

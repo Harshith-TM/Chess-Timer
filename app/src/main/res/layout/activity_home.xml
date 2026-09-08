@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/white_shade1"
+        android:background="@color/white_background"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -24,7 +24,7 @@
             android:text="@string/text_chess"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/black_shade1"
+            android:textColor="@color/text_color_black"
             android:textSize="40sp" />
 
         <TextView
@@ -35,7 +35,7 @@
             android:text="@string/text_timer"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/black_shade1"
+            android:textColor="@color/text_color_black"
             android:textSize="60sp" />
 
     </LinearLayout>
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:background="@color/black_shade1"
+        android:background="@color/black_background"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -66,7 +66,7 @@
                 android:paddingEnd="10dp"
                 android:text="@string/text_play_time"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="25sp" />
 
             <EditText
@@ -76,7 +76,7 @@
                 android:layout_row="0"
                 android:layout_column="1"
                 android:autofillHints=""
-                android:backgroundTint="@color/white_shade1"
+                android:backgroundTint="@color/stroke_white"
                 android:fontFamily="@font/silkscreen"
                 android:hint="@string/number_10"
                 android:imeOptions="actionNext"
@@ -84,8 +84,8 @@
                 android:minWidth="48dp"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
-                android:textColorHint="@color/light_grey"
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_hint"
                 android:textSize="25sp" />
 
             <TextView
@@ -97,7 +97,7 @@
                 android:fontFamily="@font/silkscreen"
                 android:text="@string/text_minutes"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="25sp" />
 
             <TextView
@@ -111,7 +111,7 @@
                 android:paddingEnd="10dp"
                 android:text="@string/text_steps"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="25sp" />
 
             <EditText
@@ -121,7 +121,7 @@
                 android:layout_row="1"
                 android:layout_column="1"
                 android:autofillHints=""
-                android:backgroundTint="@color/white_shade1"
+                android:backgroundTint="@color/stroke_white"
                 android:fontFamily="@font/silkscreen"
                 android:hint="@string/number_5"
                 android:imeOptions="actionDone"
@@ -129,8 +129,8 @@
                 android:minWidth="48dp"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
-                android:textColorHint="@color/light_grey"
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_hint"
                 android:textSize="25sp" />
 
             <TextView
@@ -142,7 +142,7 @@
                 android:fontFamily="@font/silkscreen"
                 android:text="@string/text_seconds"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="25sp" />
 
             <TextView
@@ -156,7 +156,7 @@
                 android:paddingEnd="10dp"
                 android:text="@string/text_alert"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="25sp" />
 
             <androidx.appcompat.widget.SwitchCompat
@@ -184,7 +184,7 @@
                 android:paddingEnd="10dp"
                 android:text="@string/text_method"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="25sp" />
 
             <Spinner
@@ -214,7 +214,7 @@
                 android:paddingHorizontal="10dp"
                 android:text="@string/desc_classic_method"
                 android:textAllCaps="true"
-                android:textColor="@color/white_shade1"
+                android:textColor="@color/text_color_white"
                 android:textSize="16sp" />
 
             <TextView
@@ -232,7 +232,7 @@
                 android:visibility="gone"
                 android:text="@string/settings_error_max_value"
                 android:textAllCaps="true"
-                android:textColor="@color/settings_error_text"
+                android:textColor="@color/text_settings_error"
                 android:textSize="16sp" />
 
             <Button
@@ -244,13 +244,13 @@
                 android:layout_columnSpan="3"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                android:backgroundTint="@color/white_shade1"
+                android:backgroundTint="@color/button_start"
                 android:fontFamily="@font/silkscreen"
                 android:maxWidth="350dp"
                 android:text="@string/text_start"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="@color/black_shade1"
+                android:textColor="@color/text_color_black"
                 android:textSize="20sp"
                 app:cornerRadius="10dp" />
 
