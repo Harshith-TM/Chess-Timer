@@ -11,13 +11,30 @@
     <color name="light_grey">#A5A5A5</color>
     <color name="red">#FF3030</color>
 
+    <!--text colors-->
+    <color name="text_color_white">@color/white_shade1</color>
+    <color name="text_color_black">@color/black_shade1</color>
+    <color name="text_color_hint">@color/light_grey</color>
+    <color name="text_settings_error">@color/red</color>
+    <!--background colors-->
+    <color name="white_background">@color/white_shade1</color>
+    <color name="black_background">@color/black_shade1</color>
+    <!--buttons colors-->
+    <color name="button_start">@color/white_shade1</color>
+    <color name="button_stop">@color/red</color>
+    <!--stroke colors-->
+    <color name="stroke_black">@color/black_shade1</color>
+    <color name="stroke_white">@color/white_shade1</color>
+    <!--overlay colors-->
+    <color name="countdown_overlay">@color/black_shade2</color>
+    <!--timer card state colors-->
+    <color name="selected_timer_focused">@color/light_green</color>
+    <color name="selected_timer_unfocused">@color/dark_green</color>
+    <!--timer card colors-->
     <color name="timer_white">@color/black_shade1</color>
     <color name="timer_black">@color/white_shade1</color>
     <color name="timer_end">@color/red</color>
-    <color name="settings_error_text">@color/red</color>
-    <color name="countdown_overlay">@color/black_shade2</color>
-    <color name="selected_timer_focused">@color/light_green</color>
-    <color name="selected_timer_unfocused">@color/dark_green</color>
+    <!--timer control button colors-->
     <color name="white_button_enabled">@color/dark_grey</color>
     <color name="white_button_disabled">@color/light_grey</color>
     <color name="black_button_enabled">@color/light_grey</color>
