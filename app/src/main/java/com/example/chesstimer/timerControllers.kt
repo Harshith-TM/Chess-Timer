@@ -2,6 +2,8 @@ package com.example.chesstimer
 
 import android.os.Handler
 import android.os.Looper
+import android.view.LayoutInflater
+import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.example.chesstimer.ActivityTimer.GameState
@@ -132,19 +134,22 @@ fun ActivityTimer.stopGame() {
         controlButtonsState()
     }
 
-    AlertDialog.Builder(this)
-        .setTitle("Stop Game")
-        .setMessage("Are you sure you want to stop the game?")
-        .setNegativeButton("Cancel") { _, _ ->
-            if (wasRunning) {
-                resumeGame()
-            }
+    val view = LayoutInflater.from(this).inflate(R.layout.alert_dialog_timer_stop, null)
+    val alertDialog = AlertDialog.Builder(this).setView(view).setCancelable(false).create()
+    val buttonCancel = view.findViewById<Button>(R.id.alert_button_cancel)
+    buttonCancel.setOnClickListener {
+        if (wasRunning) {
+            resumeGame()
         }
-        .setPositiveButton("Stop") { _, _ ->
-            playerTimer?.cancel()
-            playerTimer = null
-
-            finish()
-        }
-        .show()
+        alertDialog.dismiss()
+    }
+    val buttonStop = view.findViewById<Button>(R.id.alert_button_stop)
+    buttonStop.setOnClickListener {
+        playerTimer?.cancel()
+        playerTimer = null
+        finish()
+    }
+    alertDialog.show()
+    alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+    alertDialog.window?.setDimAmount(0.6f)
 }
