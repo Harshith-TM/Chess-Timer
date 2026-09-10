@@ -1,4 +1,4 @@
-# 📱 Portfolio App
+# 📱 Chess Timer
 
 ![Project MockUp](ProjectScreenShots/Project_MockUp.png)
 
