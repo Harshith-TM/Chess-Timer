@@ -36,31 +36,59 @@ A simple and intuitive Chess Clock application for Android, built using **Kotlin
 
 ## 📁 Project Structure
 ```
-Portfolio-App/
-│
-├── app/
-│   └── src/
-│       └── main/
-│           ├── java/
-│           │   └── com/example/chesstimer/
-│           │       ├── ActivityHome.kt
-│           │       ├── ActivityTimer.kt
-│           │       ├── LauncherScreen.kt
-│           │       └── TimerMethods.kt
-│           │
-│           └── res/
-│               ├── drawable/
-│               ├── font/
-│               ├── layout/
-│               │   ├── activity_home.xml
-│               │   ├── activity_timer.xml
-│               │   └── launcher_screen.xml
-│               ├── anim/
-│               └── values/
+Chess-Timer/
 │
 ├── ProjectScreenShots/
+│   └── screenshots...
+│
+├── app/
+│   ├── build.gradle.kts
+│   │
+│   └── src/
+│       ├── main/
+│       │   │
+│       │   ├── AndroidManifest.xml
+│       │   │
+│       │   ├── java/
+│       │   │   └── com/
+│       │   │       └── example/
+│       │   │           └── chesstimer/
+│       │   │               ├── ActivityHome.kt
+│       │   │               ├── ActivityTimer.kt
+│       │   │               ├── LauncherScreen.kt
+│       │   │               └── TimerMethods.kt
+│       │   │
+│       │   └── res/
+│       │       ├── drawable/
+│       │       │   └── ...
+│       │       │
+│       │       ├── font/
+│       │       │   └── ...
+│       │       │
+│       │       ├── layout/
+│       │       │   ├── activity_home.xml
+│       │       │   ├── activity_timer.xml
+│       │       │   └── launcher_screen.xml
+│       │       │
+│       │       ├── anim/
+│       │       │   └── ...
+│       │       │
+│       │       └── values/
+│       │           └── ...
+│       │
+│       └── test/
+│           └── ...
+│
+├── gradle/
+│   └── ...
+│
+├── .gitignore
 ├── README.md
-└── build.gradle
+├── build.gradle.kts
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle.kts
 ```
 
 ---
